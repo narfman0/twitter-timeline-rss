@@ -11,13 +11,22 @@ auth.set_access_token(settings.TWITTER_ACCESS_TOKEN, settings.TWITTER_ACCESS_TOK
 api = tweepy.API(auth)
 
 
+@app.route('/')
+def home():
+    return generate_response(api.me().screen_name, api.home_timeline())
+
+
 @app.route('/<username>')
 def feed(username):
-    title = "{}'s timeline".format(username)
+    return generate_response(username, api.user_timeline(username))
+
+
+def generate_response(username, tweets):
+    title = "@{}'s timeline".format(username)
     feed = AtomFeed(title, feed_url='/', url='/', subtitle="twitter-timeline-rss for now")
-    public_tweets = api.user_timeline(username)
-    for tweet in public_tweets:
-        feed.add(tweet.title, tweet.text, content_type='html',
+    for tweet in tweets:
+        tweet_title = "@{}'s tweet from: {}".format(tweet.author.screen_name, tweet.created_at.__str__())
+        feed.add(tweet_title, tweet.text, content_type='html',
                  author=tweet.author.screen_name, url=tweet.source_url, id=tweet.id,
-                 published=tweet.created_at)
+                 published=tweet.created_at, updated=tweet.created_at)
     return feed.get_response()
