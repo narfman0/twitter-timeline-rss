@@ -21,6 +21,6 @@ setup(
     include_package_data=True,
     zip_safe=True,
     install_requires=['tweepy', 'flask'],
-    test_requirements=['tox', 'coverage', 'flake8', 'wheel'],
+    tests_require=['tox', 'coverage', 'flake8', 'wheel'],
     test_suite='tests',
 )
