@@ -2,6 +2,12 @@
 twitter-timeline-rss
 ====================
 
+.. image:: https://img.shields.io/pypi/v/twitter-timeline-rss.svg
+        :target: https://pypi.python.org/pypi/twitter-timeline-rss
+
+.. image:: https://img.shields.io/travis/narfman0/twitter-timeline-rss.svg
+        :target: https://travis-ci.org/narfman0/twitter-timeline-rss
+
 Ingest a twitter timeline and render as RSS. This python web app is a service
 to ingest arbitrary user's timelines as rss feeds, so you don't have to go
 to twitter manually to read through quips and witticisms. Takes username as

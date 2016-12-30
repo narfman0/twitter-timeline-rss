@@ -1,11 +1,6 @@
-from pip.download import PipSession
-from pip.req import parse_requirements
 from setuptools import setup, find_packages
 from twitter_timeline_rss import __version__ as version
 
-requirements = [
-    str(req.req) for req in parse_requirements('requirements.txt', session=PipSession())
-]
 
 setup(
     name='twitter-timeline-rss',
@@ -25,5 +20,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     zip_safe=True,
-    install_requires=requirements,
+    install_requires=['tweepy', 'flask'],
+    test_requirements=['tox', 'flake8'],
+    test_suite='tests',
 )
