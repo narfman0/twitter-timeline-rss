@@ -2,8 +2,8 @@
 from datetime import datetime
 import tweepy
 from flask import Flask
-from twitter_timeline_rss import settings
 from werkzeug.contrib.atom import AtomFeed
+from twitter_timeline_rss import settings
 
 
 app = Flask(__name__)

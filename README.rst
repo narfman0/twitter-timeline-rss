@@ -34,6 +34,21 @@ Hit the endpoint with something like this url in your favorite browser::
 
     http://127.0.0.1:5000/narfman0
 
+CLI
+---
+
+The command line interface may be used to dump your timeline to stdout::
+
+    twitter_timeline_rss
+
+An arbitrary user may be dumped with `--user`::
+
+    twitter_timeline_rss --user narfman0
+
+or it may be directed at a file with `--file`::
+
+    twitter_timeline_rss --user narfman0 --file narfman0.atom
+
 License
 =======
 

@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
-import json
 import unittest
 
 from twitter_timeline_rss.twitter import generate_response

@@ -23,4 +23,7 @@ setup(
     install_requires=['tweepy', 'flask'],
     tests_require=['tox', 'coverage', 'flake8', 'wheel'],
     test_suite='tests',
+    entry_points={
+        'console_scripts': ['twitter_timeline_rss=twitter_timeline_rss.cli:main'],
+    }
 )
