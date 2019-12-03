@@ -50,6 +50,9 @@ clean-test: ## remove test and coverage artifacts
 build:
 	python setup.py sdist bdist_wheel
 
+docker:
+	docker build . -t narfman0/twitter_timeline_rss
+
 lint: ## check style with flake8
 	flake8 twitter_timeline_rss tests
 
