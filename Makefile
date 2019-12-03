@@ -51,7 +51,10 @@ build:
 	python setup.py sdist bdist_wheel
 
 docker:
-	docker build . -t narfman0/twitter_timeline_rss
+	docker build . -t narfman0/twitter-timeline-rss
+
+docker-push: docker
+	docker push narfman0/twitter-timeline-rss
 
 lint: ## check style with flake8
 	flake8 twitter_timeline_rss tests
