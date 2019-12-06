@@ -149,3 +149,6 @@ include/
 lib64
 lib/
 pip-selfcheck.json
+
+# gcloud
+app.yaml
