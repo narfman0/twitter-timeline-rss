@@ -16,11 +16,6 @@ parameter for any timeline.
 Usage
 =====
 
-Optional: set up virtualenv environment with::
-
-    virtualenv venv
-    source venv/bin/activate
-
 Install requirements::
 
     pip install -r requirements.txt
